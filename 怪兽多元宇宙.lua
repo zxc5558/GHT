@@ -121,7 +121,7 @@ end)
 end
 end)
 local example = library:CreateWindow({
-    text = "Stuff"
+    text = "杂项"
   })
   example:AddToggle("自动重生", function(state)
     _G.autospawn = (state and true or false)
