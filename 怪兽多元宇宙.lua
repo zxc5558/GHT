@@ -3,6 +3,7 @@ _G.tp = 1
 local mt = getrawmetatable(game);
 setreadonly(mt,false)
 local namecall = mt.__namecall
+
 mt.__namecall = newcclosure(function(self, ...)
     local Method = getnamecallmethod()
     local Args = {...}
@@ -15,6 +16,8 @@ mt.__namecall = newcclosure(function(self, ...)
     
     return namecall(self, ...) 
 end)
+
+
 local vu = game:GetService("VirtualUser")
 game:GetService("Players").LocalPlayer.Idled:connect(function()
    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
@@ -25,7 +28,7 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco
 local example = library:CreateWindow({
   text = "怪兽多元宇宙"
 })
-    example:AddLabel("自动使用技能",function()
+    example:AddLabel("自动使用技能l",function()
     end)
     example:AddBox("技能名称", function(object, focus)
         if focus then
@@ -43,15 +46,15 @@ end
 end
         end
     end)
-   example:AddLabel("刷怪范围",function()
+   example:AddLabel("刷怪的范围",function()
     end)
-example:AddBox("范围", function(object, focus)
+example:AddBox("刷怪范围", function(object, focus)
     if focus then
    
         _G.distance = tonumber(object.Text)
     end
 end)
-example:AddToggle("使用所有技能", function(state)
+example:AddToggle("使用全部技能", function(state)
     _G.abilitiestouse = (state and true or false)
     while _G.abilitiestouse do
         wait(0.5)
@@ -70,7 +73,7 @@ end
 end)
 end
 end)
-example:AddToggle("使用所有攻击技能", function(state)
+example:AddToggle("使用全部攻击技能", function(state)
     _G.abilitiestouse2 = (state and true or false)
     while _G.abilitiestouse2 do
         wait(0.5)
@@ -118,9 +121,9 @@ end)
 end
 end)
 local example = library:CreateWindow({
-    text = "其他功能"
+    text = "Stuff"
   })
-  example:AddToggle("自动复活", function(state)
+  example:AddToggle("自动重生", function(state)
     _G.autospawn = (state and true or false)
     while _G.autospawn do
         wait()
@@ -164,7 +167,7 @@ end
 end)
 end
 end)
-example:AddToggle("自动隐藏玩家名", function(state)
+example:AddToggle("隐藏自身名称", function(state)
     _G.nametag = (state and true or false)
     while _G.nametag do
     wait()
@@ -176,7 +179,7 @@ example:AddToggle("自动隐藏玩家名", function(state)
 end)
 end
 end)
-example:AddButton("自毁",function()
+example:AddButton("自我销毁",function()
 game.Players.LocalPlayer.Character:BreakJoints()
 end)
 spawn(function()
@@ -190,7 +193,7 @@ end)
     end
 end)
 local example = library:CreateWindow({
-    text = "制作信息"
+    text = "骚福瑞"
   })
   example:AddLabel("MARCO POLO#3842",function()
   end)
