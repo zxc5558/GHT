@@ -1,7 +1,7 @@
 --认准qq群聊晓林739736672汉化
 local Translations = {
     ["MENU"] = "显示菜单",
-    ["L U N A R"] = "晓林汉化",
+    ["L U N A R"] = "有人在玩吗",
     ["Home"] = "主页",
     ["Custom Stats"] = "自定义属性",
     ["Autofarm"] = "自动挂机",
