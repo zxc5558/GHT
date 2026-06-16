@@ -1,278 +1,84 @@
---认准qq群聊晓林739736672汉化
-local Translations = {
-    ["MENU"] = "显示菜单",
-    ["L U N A R"] = "主页",
-    ["Home"] = "主页",
-    ["Custom Stats"] = "自定义属性",
-    ["Autofarm"] = "自动挂机",
-    ["Artifacts Autofarm"] = "神器自动挂机",
-    ["Teleports"] = "传送",
-    ["Event"] = "事件",
-    ["Esp"] = "透视",
-    ["Others"] = "其他",
-    ["Auto-Load"] = "自动加载",
-    ["Configs Name"] = "配置名称",
-    ["Enter Name"] = "输入名称",
-    ["Create config"] = "创建配置",
-    ["Configs list"] = "配置列表",
-    ["Save config"] = "保存配置",
-    ["Reset config"] = "重置配置",
-    ["Delete config"] = "删除配置",
-    ["Set as autoload"] = "设为自动加载",
-    ["Anti-Lag"] = "防卡顿",
-    ["Low Quality Textures"] = "低质量纹理",
-    ["White Screen"] = "白屏模式",
-    ["Servers"] = "服务器",
-    ["Rejoin Server"] = "重新加入服务器",
-    ["Server Hop"] = "切换服务器",
-    ["Reset Server Hop Info"] = "重置服务器切换信息",
-    ["Visual"] = "视觉",
-    ["Remove Fog"] = "移除迷雾",
-    ["Clear the fog from the map!"] = "清除地图上的迷雾！",
-    ["Remove Camera Effects"] = "移除镜头效果",
-    ["Removes camera effects like Bleed, Necropoison, Burn, Frostbite, etc"] = "移除流血、死灵毒、燃烧、冻伤等镜头效果",
-    ["Remove Disaster Effects"] = "移除灾害效果",
-    ["Removes disasters effects like Snow, Rain, Blizzard, etc"] = "移除雪、雨、暴风雪等灾害效果",
-    ["Anti-AFK"] = "防挂机踢人",
-    ["Custom Name"] = "自定义名称",
-    ["Hide Username (Client-Sided)"] = "隐藏用户名（仅本地）",
-    ["Any other user can see your username normally, only use this function if you are going to record a video so as not to expose your real username!"] = "其他玩家仍能正常看到你的用户名，仅在录制视频时使用此功能以隐藏真实用户名！",
-    ["Discord"] = "社群",
-    ["Copy discord link"] = "复制Discord链接",
-    ["Information"] = "信息",
-    ["For more information about updates join our discord server!"] = "获取更多更新信息请加入我们的Discord服务器！",
-    ["Mush Autofarm"] = "蘑菇自动挂机",
-    ["Region Missions Status"] = "区域任务状态",
-    ["Offline"] = "离线",
-    ["Auto Missions"] = "自动任务",
-    ["Automatically completes region missions!"] = "自动完成区域任务！",
-    ["Recommended"] = "推荐设置",
-    ["Select Creature"] = "选择生物",
-    ["Refresh Creature List"] = "刷新生物列表",
-    ["Auto Spawn"] = "自动重生",
-    ["Spawn, restart, and claim death rewards automatically!"] = "自动重生、重启并领取死亡奖励！",
-    ["Death Points Target"] = "死亡点数目标",
-    ["Auto Self Kill"] = "自动自杀",
-    ["Automatically kill your creature when it reaches the previously selected death points!"] = "当生物达到预设死亡点数时自动杀死它！",
-    ["Auto Nest"] = "自动筑巢",
-    ["Enable Auto Nest"] = "启用自动筑巢",
-    ["Create the nest and invite all players when the eggs are available automatically!"] = "自动创建巢穴并在蛋可用时邀请所有玩家！",
-    ["Type of Invitation"] = "邀请类型",
-    ["Friends"] = "好友",
-    ["Everyone"] = "所有人",
-    ["Auto Accept Nest Request"] = "自动接受巢穴邀请",
-    ["Accept any type of invitation to nest as established!"] = "自动接受任何类型的巢穴邀请！",
-    ["Teleport To Nest"] = "传送到巢穴",
-    ["Re-spawn Nest"] = "重新生成巢穴",
-    ["Extra"] = "额外功能",
-    ["Auto Shelter"] = "自动庇护",
-    ["Prevents you from taking damage from events such as acid rain, earthquakes, or heat waves!"] = "防止你受到酸雨、地震或热浪等事件的伤害！",
-    ["Nest Upgrade"] = "巢穴升级",
-    ["MutationChance"] = "变异概率",
-    ["EggSpeed"] = "产蛋速度",
-    ["NestDefense"] = "巢穴防御",
-    ["Auto Nest Upgrade"] = "自动巢穴升级",
-    ["Collect resources to automatically upgrade your nest!"] = "收集资源以自动升级你的巢穴！",
-    ["Menu"] = "菜单",
-    ["Get Max Storage Slots"] = "获取最大储物格",
-    ["LocalPlayer"] = "本地玩家",
-    ["Auto Scent Hidden"] = "自动隐藏气味",
-    ["Prevent other players from sniffing your creature!"] = "防止其他玩家追踪你的生物！",
-    ["Instant Lobby Return"] = "立即返回大厅",
-    ["No cooldown or penalty when returning to the lobby!"] = "返回大厅无冷却或惩罚！",
-    ["Always Keen Observer"] = "始终保持敏锐观察者",
-    ["Gives Keen Observer to any creature!"] = "给任何生物赋予敏锐观察者效果！",
-    ["Always Lay Effect"] = "始终保持躺下效果",
-    ["It gives you the laid back effect which cures all your negative effects 4 times faster!"] = "为你提供放松效果，使负面效果的治愈速度提高4倍！",
-    ["Combat"] = "战斗",
-    ["Auto Aggressive State"] = "自动攻击状态",
-    ["Increases damage by 25% and reduces stamina regeneration by 50%"] = "伤害提高25%，耐力恢复降低50%",
-    ["Auto Scared State"] = "自动恐惧状态",
-    ["Decreases damage by 50% and increases speed by 25%"] = "伤害降低50%，速度提高25%",
-    ["Anti Broken Leg"] = "防断腿",
-    ["Will make your legs unbreakable!"] = "使你的腿不会骨折！",
-    ["Anti Shredded Wings"] = "防翅膀撕裂",
-    ["Will make your wings unbreakable!"] = "使你的翅膀不会撕裂",
-    ["Anti Confusion"] = "防混乱",
-    ["It will make you immune to the confusion effect!"] = "使你免疫混乱效果！",
-    ["Anti Grab"] = "防抓取",
-    ["Prevent any player from grabbing you!"] = "防止任何玩家抓取你！",
-    ["Infinite Stamina"] = "无限耐力",
-    ["You will never get tired again!"] = "你将永远不会疲劳！",
-    ["No Lava Damage"] = "无岩浆伤害",
-    ["Allows you to step on the lava on Volcano Island without taking damage!"] = "允许你在火山岛的岩浆上行走而不受伤害！",
-    ["No Drowning Damage"] = "无溺水伤害",
-    ["Even if your Oxygen is 0 you won't take damage!"] = "即使氧气为0也不会受到伤害！",
-    ["No Meteor Damage"] = "无流星伤害",
-    ["Prevents you from losing health if a meteor falls on you!"] = "防止流星掉落对你造成生命值损失！",
-    ["No Moisture Damage"] = "无潮湿伤害",
-    ["Prevents your from losing health due to moisture!"] = "防止潮湿对你造成生命值损失！",
-    ["No Tornado Damage"] = "无龙卷风伤害",
-    ["Prevents your from losing health due to tornado event!"] = "防止龙卷风事件对你造成生命值损失！",
-    ["Turn Radius"] = "转向半径",
-    ["Enable Custom Turn Radius"] = "启用自定义转向半径",
-    ["Activating this modifies your Stat, if you deactivate it it will return to its original value!"] = "启用后会修改你的属性，停用后将恢复原始值！",
-    ["Walk Speed"] = "行走速度",
-    ["Enable Custom Walk Speed"] = "启用自定义行走速度",
-    ["Sprint Speed"] = "冲刺速度",
-    ["Enable Custom Sprint Speed"] = "启用自定义冲刺速度",
-    ["Fly Speed"] = "飞行速度",
-    ["Enable Custom Fly Speed"] = "启用自定义飞行速度",
-    ["Survival Autofarm"] = "生存自动挂机",
-    ["Auto Eat"] = "自动进食",
-    ["Prevent your creature from starving!"] = "防止你的生物饥饿！",
-    ["Auto Drink"] = "自动饮水",
-    ["Prevent your creature from dying of thirst!"] = "防止你的生物渴死！",
-    ["Auto Mud Roll"] = "自动滚泥",
-    ["Automatically roll on your nearest mud!"] = "自动在最近的泥地打滚！",
-    ["Token Autofarm"] = "代币自动挂机",
-    ["Auto Gacha Tokens"] = "自动扭蛋代币",
-    ["Automatically collect all"] = "自动收集全部",
-    ["Mutation/Trait(s) Autofarm"] = "变异/特质自动挂机",
-    ["If you don't select any mutation/trait(s) in the dropdowns then any that the creature gets will be saved"] = "如果你在下拉菜单中未选择任何变异/特质，则生物获得的任何变异/特质都将被保存",
-    ["Mutations"] = "变异",
-    ["Auto Mutation(s)"] = "自动变异",
-    ["Automatically search for the selected mutation(s)!"] = "自动搜索选中的变异！",
-    ["Traits"] = "特质",
-    ["Auto Trait(s)"] = "自动特质",
-    ["Automatically search for the selected trait(s)!"] = "自动搜索选中的特质！",
-    ["Misc"] = "杂项",
-    ["Hide Ping and FPS"] = "隐藏延迟与帧率",
-    ["Not enough creatures."] = "生物数量不足。",
-    ["Warning"] = "警告",
-    ["Your account needs to have 20 or"] = "你的账号需要拥有20个或更多生物。",
-    ["Region Teleports"] = "区域传送",
-    ["Custom Teleports"] = "自定义传送",
-    ["Custom Location"] = "自定义地点",
-    ["Teleport to Location"] = "传送到该地点",
-    ["Location Name"] = "地点名称",
-    ["Save Location"] = "保存地点",
-    ["Delete Location"] = "删除地点",
-    ["Jungle"] = "丛林",
-    ["Algae Sandbar"] = "藻类沙洲",
-    ["Central Rockfaces"] = "中央岩壁",
-    ["Swamp Hill"] = "沼泽山丘",
-    ["Coral Reef"] = "珊瑚礁",
-    ["Desert"] = "沙漠",
-    ["Grassy shoal"] = "绿茵浅滩",
-    ["Rocky Drop"] = "岩石陡坡",
-    ["Redwoods"] = "红杉林",
-    ["Mountains"] = "山脉",
-    ["Tundra"] = "冻土带",
-    ["Seaweed Depths"] = "海藻深渊",
-    ["Flower Cave"] = "花之洞穴",
-    ["Mesa"] = "平顶山",
-    ["Pride Rocks"] = "荣耀石",
-    ["Volcano Island"] = "火山岛",
-    ["Gacha Token ESP"] = "扭蛋代币透视",
-    ["Explorer Gacha Token Esp"] = "探索者扭蛋代币透视",
-    ["Galaxy Gacha Token Esp"] = "银河扭蛋代币透视",
-    ["Mecha Gacha Token Esp"] = "机甲扭蛋代币透视",
-    ["Monster Gacha Token Esp"] = "怪物扭蛋代币透视",
-    ["Sweet Gacha Token Esp"] = "甜蜜扭蛋代币透视",
-    ["Others ESP"] = "其他透视",
-    ["Abandoned Eggs Esp"] = "遗弃的蛋透视",
-    ["Teleport to Abandoned Egg"] = "传送到遗弃的蛋",
-    ["Player ESP"] = "玩家透视",
-    ["Enable Player ESP"] = "启用玩家透视",
-    ["Player ESP Configurations:"] = "玩家透视设置：",
-    ["Display Health"] = "显示生命值",
-    ["Display Health Bar"] = "显示生命条",
-    ["Display Tracer"] = "显示追踪线",
-    ["Display Names"] = "显示名称",
-    ["Display Distance"] = "显示距离",
-    ["Display 3D Box"] = "显示3D方框",
-    ["Display Chameleon"] = "显示变色龙玩家"  
-}
+--// This file was generated by 69ms using hookOp [https://discord.gg/yRrH6vHBCK]
+--// Time taken: 1.454164299997501
 
-local function translateText(text)
-    if not text or type(text) ~= "string" then return text end
-    if Translations[text] then return Translations[text] end
-    for en, cn in pairs(Translations) do
-        if text:find(en) then return text:gsub(en, cn) end
-    end
-    return text
-end
-
-local translatedElements = {}
-local originalTexts = {}
-
-local function safeTranslateElement(element)
-    if translatedElements[element] then return end
-    pcall(function()
-        if element:IsA("TextLabel") or element:IsA("TextButton") or element:IsA("TextBox") then
-            local currentText = element.Text
-            if currentText and currentText ~= "" then
-                if not originalTexts[element] then
-                    originalTexts[element] = currentText
-                end
-                local translatedText = translateText(currentText)
-                if translatedText ~= currentText then
-                    element.Text = translatedText
-                    translatedElements[element] = true
-                end
-            end
-        end
-    end)
-end
-
-local function setupSmartListener()
-    local function onTextPropertyChanged(element)
-        if translatedElements[element] then
-            local currentText = element.Text
-            local originalText = originalTexts[element]
-            if currentText == originalText or translateText(currentText) == currentText then
-                translatedElements[element] = nil
-                return
-            end
-            local translatedText = translateText(currentText)
-            if translatedText ~= currentText then
-                element.Text = translatedText
-            end
-        else
-            safeTranslateElement(element)
-        end
-    end
-
-    local function addSmartListener(parent)
-        parent.DescendantAdded:Connect(function(descendant)
-            task.wait(0.3)
-            safeTranslateElement(descendant)
-            if descendant:IsA("TextLabel") or descendant:IsA("TextButton") or descendant:IsA("TextBox") then
-                descendant:GetPropertyChangedSignal("Text"):Connect(function()
-                    task.wait(0.1)
-                    onTextPropertyChanged(descendant)
-                end)
-            end
-        end)
-    end
-    pcall(addSmartListener, game:GetService("CoreGui"))
-    local player = game:GetService("Players").LocalPlayer
-    if player and player:FindFirstChild("PlayerGui") then
-        pcall(addSmartListener, player.PlayerGui)
-    end
-end
-
-local function delayedInitialTranslate()
-    task.wait(1.5)
-    for _, gui in ipairs(game:GetService("CoreGui"):GetDescendants()) do
-        safeTranslateElement(gui)
-    end
-    local player = game:GetService("Players").LocalPlayer
-    if player and player:FindFirstChild("PlayerGui") then
-        for _, gui in ipairs(player.PlayerGui:GetDescendants()) do
-            safeTranslateElement(gui)
-        end
-    end
-end
-
-task.wait(1)
-setupSmartListener()
-delayedInitialTranslate()
-
-local success, err = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lunar-Hub/refs/heads/main/FreeLoader.lua"))()
-    end)
-if not success then
-    warn("加载失败:", err)
-end
+-- Successfully sent http GET requests to the following site(s): 'https://raw.githubusercontent.com/Mangnex/Lunar-Hub/refs/heads/main/FreeLoader.lua'
+local fenv = getfenv();
+local eko1 = task.wait(1);
+local eko2 = game.GetService;
+local eko3 = game:GetService("CoreGui");
+local success = pcall(function(p1, a, b, c)
+    local eko4 = game.CoreGui.DescendantAdded;
+    local eko5 = eko4.Connect;
+    local eko6 = eko4:Connect(function(p1_0, a_0, b_0, c_0) end);
+end);
+local eko7 = game.GetService;
+local eko8 = game:GetService("Players");
+local eko9 = game.Players.LocalPlayer;
+local eko10 = eko9.FindFirstChild;
+local eko11 = eko9:FindFirstChild("PlayerGui");
+local eko12 = eko9 and nil;
+if eko12 then 
+end;
+local eko13 = task.wait(1.5);
+local eko14 = game.GetService;
+local eko15 = game:GetService("CoreGui");
+local eko16 = game.CoreGui.GetDescendants;
+local eko17 = game.CoreGui:GetDescendants();
+for for_key_0, for_val_0 in ipairs(eko17) do
+    local eko18 = {};
+    local eko19 = eko18;
+    local eko20 = eko19[for_val_0];
+    local success_1 = pcall(function(a_2, b_2, c_2)
+        local eko21 = for_val_0.IsA;
+        local eko22 = for_val_0:IsA("TextLabel");
+        local eko23 =         ;
+        local eko24 = eko22 or eko23();
+        local eko25 =         ;
+        local eko26 = eko24 or eko25();
+        if eko26 then 
+            local eko27 = for_val_0.Text;
+            local eko28 = (eko27 ~= "");
+            local eko29 = eko27 and eko28;
+            if eko29 then 
+                local eko30 = not eko27;
+                local eko31 = type(eko27);
+                local eko32 = (eko31 ~= "string");
+                local eko33 = eko30 or eko32;
+                if eko33 then 
+                    local eko34 = (eko27 ~= eko27);
+                    if eko34 then 
+                    end;
+                end;
+            end;
+        end;
+    end);
+end;
+local eko35 = game.GetService;
+local eko36 = game:GetService("Players");
+local eko37 = game.Players.LocalPlayer;
+local eko38 = eko9.FindFirstChild;
+local eko39 = eko9:FindFirstChild("PlayerGui");
+local eko40 = eko9 and nil;
+if eko40 then 
+end;
+local eko48 = eko47.Body;
+local success_2 = pcall(function(a_3, b_3, c_3)
+    local eko41 = game.HttpGet;
+    local eko42 = game:HttpGet("https://raw.githubusercontent.com/Mangnex/Lunar-Hub/refs/heads/main/FreeLoader.lua");
+    local eko43 = loadstring(eko42);
+    local eko44 = game.PlaceId;
+    local eko45 = (eko44 == 3431407618);
+    if eko45 then 
+        local eko46 = {
+            ["Method"] = "GET",
+            ["Url"] = "https://lunar-rest-api.vercel.app/script/Isle10"
+        };
+        local eko47 = request(eko46);
+        local eko49 = eko47.Body;
+        local eko50 = loadstring(eko49);
+        local eko51 = eko50();
+    end;
+end);
+local eko52 = not success_2;
+if eko52 then 
+end;
